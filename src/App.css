@@ -1,0 +1,24 @@
+.App {
+  display: flex;
+}
+
+.dashboard {
+  display: flex;
+  
+}
+
+.time-entry-widget {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50%;
+  
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label{
+  
+}
