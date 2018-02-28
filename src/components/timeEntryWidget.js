@@ -9,9 +9,17 @@ class TimeEntryWidget extends Component {
     var formData: {
       projectName: f.projectName.value,
       resource: f.resource.value,
-
+      date: f.date.value,
+      startTime: f.startTime.value,
+      stopTime: f.stopTime.value,
+      activity: f.activity.value,
+      taskName: f.taskname.value
     }
   }
+
+
+      
+
 
   render() {
     return(
@@ -46,7 +54,7 @@ class TimeEntryWidget extends Component {
           <input id="activity" type="text"></input>
 
           <label>Task Name:</label>
-          <select>
+          <select name="taskName" id="taskName">
             <option>React-Native</option>
             <option>Setup</option>
             <option>Planning</option>

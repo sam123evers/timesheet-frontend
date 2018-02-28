@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-
+import { 
+  Route,
+  Link,
+  HashRouter 
+} from 'react-router-dom';
 import './App.css';
 
 import { ApolloClient } from 'apollo-client';
@@ -7,8 +11,9 @@ import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { ApolloProvider } from 'react-apollo';
 
-import Dashboard from './dashboard'
-import TimeEntryWidget from './timeEntryWidget'
+import HomeView from './views/homeView';
+import TimeView from './views/timeView';
+
 
 
 export const client = new ApolloClient({
@@ -21,13 +26,15 @@ class App extends Component {
   render() {
     return (
       <ApolloProvider client={client}>
-        <div className="App">
-          <Dashboard />
-          <TimeEntryWidget />
-        </div>
+        <HashRouter>
+          <div className="App">
+            <Route path="//" component={HomeView} />
+            <Route path="/time" component={TimeView} />
+          </div>
+        </HashRouter>
       </ApolloProvider>
-    );
+    )
   }
-}
+};
 
 export default App;
