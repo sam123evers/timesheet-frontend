@@ -1,25 +1,23 @@
 import React, { Component } from 'react'
+import ACTIONS from '../actions'
 
 
 class TimeEntryWidget extends Component {
   handleSubmit(e) {
     e.preventDefault();
     var f = e.target
-    console.log(f.projectName.value, f.resource.value, f.activity.value, f.date.value, f.startTime.value )
-    var formData: {
+    console.log(f.projectName.value, f.resource.value, f.activity.value, f.date.value, f.startTime.value, f.stopTime.value )
+    var formData = {
       projectName: f.projectName.value,
       resource: f.resource.value,
       date: f.date.value,
       startTime: f.startTime.value,
       stopTime: f.stopTime.value,
       activity: f.activity.value,
-      taskName: f.taskname.value
-    }
+      taskName: f.taskName.value
+    };
+    ACTIONS.appendValues(formData)
   }
-
-
-      
-
 
   render() {
     return(
@@ -71,3 +69,6 @@ class TimeEntryWidget extends Component {
 }
 
 export default TimeEntryWidget
+
+      
+
